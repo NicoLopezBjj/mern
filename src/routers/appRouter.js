@@ -1,12 +1,12 @@
 import { BrowserRouter as Router,Routes ,Route} from 'react-router-dom'
-import HomePage from '../components/HomePage'
-import LoginPage from '../components/LoginPage'
-import RegisterPage from '../components/RegisterPage'
-import AccountPage from '../components/AccountPage'
-import ProjectsPage from '../components/ProjectsPage'
-import ProjectPage from '../components/ProjectPage' 
-import UsersPage from '../components/admin/UsersPage'
-import NotFoundPage from '../components/NotFoundPage'
+import HomePage from '../pages/HomePage'
+import LoginPage from '../pages/LoginPage'
+import RegisterPage from '../pages/RegisterPage'
+import AccountPage from '../pages/AccountPage'
+import ProjectsPage from '../pages/ProjectsPage'
+import ProjectPage from '../pages/ProjectPage' 
+import UsersPage from '../pages/admin/UsersPage'
+import NotFoundPage from '../pages/NotFoundPage'
 
  
 export default function AppRouter () {
