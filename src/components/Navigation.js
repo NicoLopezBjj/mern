@@ -1,7 +1,9 @@
+import { Navbar , Nav , NavDropdown } from react-bootstrap
+
 export default function Navigation () {
     return (
-        <div>
+        <Navbar collapseOnSelect expand="lg" variant="dark" bg="dark"  >
             <h1>Navigation</h1>
-        </div>
+        </Navbar>
     )
 }
