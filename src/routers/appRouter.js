@@ -18,10 +18,18 @@ export default function AppRouter () {
                 <Route exact path='/' element={<HomePage/>} />
                 <Route exact path='/login' element={<LoginPage/>} />
                 <Route exact path='/register' element={<RegisterPage/>} />
-                <PrivateRoute exact path='/account' element={<AccountPage/>} />
-                <PrivateRoute exact path='/projects' element={<ProjectsPage/>} />
-                <PrivateRoute exact path='/project/:projectId' element={<ProjectPage/>} />
-                <PrivateRoute exact path='/admin/users' element={<UsersPage/>} />
+                <Route path='/account' element={<PrivateRoute/>}>
+                    <Route index element={<AccountPage/>} />
+                </Route>
+                <Route path='/projects' element={<PrivateRoute/>}>
+                    <Route index element={<ProjectsPage/>} />
+                </Route>
+                <Route path='/project/:projectId' element={<PrivateRoute/>}>
+                    <Route index element={<ProjectPage/>} />
+                </Route>
+                <Route path='/admin/users' element={<PrivateRoute/>}>
+                    <Route index element={<UsersPage/>} />
+                </Route>
                 <Route path='*' element={<NotFoundPage/>} />
             </Routes>
         </Layout>           

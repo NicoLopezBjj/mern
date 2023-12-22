@@ -1,16 +1,15 @@
-import { Route, useNavigate } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
 
 export default function PrivateRoute ({path, element}) {
+    const user = useMemo(() => ({id:1, name:'John Doe'}), []);
+    const navigate = useNavigate();
 
-    const user = null
-    const navigate=useNavigate()
+    useEffect(() => {
+        if (!user) {
+            navigate('/login');
+        }
+    }, [navigate, user]);
 
-    if (!user) {
-        navigate('/login')
-        return null 
-    }
-
-    return (
-        <Route path={path} element={element}/>
-    )
+    return user ? <Outlet path={path} element={element}/> : null;
 }
