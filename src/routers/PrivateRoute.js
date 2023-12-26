@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import useAuth from '../auth/useAuth';
 
 export default function PrivateRoute ({path, element}) {
