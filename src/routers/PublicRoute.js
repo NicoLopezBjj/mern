@@ -8,8 +8,8 @@ export default function PrivateRoute ({path, element}) {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!user) {
-            navigate('/login');
+        if (user) {
+            navigate('/projects');
         }
     }, [navigate, user]);
 

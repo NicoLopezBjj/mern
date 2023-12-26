@@ -9,15 +9,16 @@ import UsersPage from '../pages/admin/UsersPage'
 import NotFoundPage from '../pages/NotFoundPage'
 import Layout from '../components/Layout'
 import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute'
 
 export default function AppRouter () {
     return (
         <Router>
         <Layout>
             <Routes>
-                <Route exact path='/' element={<HomePage/>} />
-                <Route exact path='/login' element={<LoginPage/>} />
-                <Route exact path='/register' element={<RegisterPage/>} />
+                <PublicRoute exact path='/' element={<HomePage/>} />
+                <PublicRoute exact path='/login' element={<LoginPage/>} />
+                <PublicRoute exact path='/register' element={<RegisterPage/>} />
                 <Route path='/account' element={<PrivateRoute/>}>
                     <Route index element={<AccountPage/>} />
                 </Route>
