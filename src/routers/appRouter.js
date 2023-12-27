@@ -34,7 +34,7 @@ export default function AppRouter () {
                 <Route path='/project/:projectId' element={<PrivateRoute/>}>
                     <Route index element={<ProjectPage/>} />
                 </Route>
-                <Route path='/admin/users' element={<PrivateRoute/>}>
+                <Route hasRole="admin" path='/admin/users' element={<PrivateRoute/>}>
                     <Route index element={<UsersPage/>} />
                 </Route>
                 <Route path='*' element={<NotFoundPage/>} />
